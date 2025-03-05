@@ -1,0 +1,22 @@
+<mat-card class="mb-5">
+    <mat-card-title *ngIf="form.id">Update Form</mat-card-title>
+    <mat-card-title *ngIf="!form.id">New Form</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="form.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Owner</mat-label>
+            <input matInput placeholder="Ex. pat@example.com" [(ngModel)]="form.owner" name="owner">
+        </mat-form-field>
+    </form>
+    <button class="primary" mat-raised-button (click)="saveForm()">
+        Save
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancel
+    </button>
+    <button *ngIf="form.id" mat-raised-button class="bg-danger text-white" (click)="delete(form.id)">
+        Delete
+    </button>
+</mat-card>

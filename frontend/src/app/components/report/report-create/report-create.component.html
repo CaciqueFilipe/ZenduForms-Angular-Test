@@ -1,0 +1,28 @@
+<div class="container">
+    <mat-card class="card-new-report">
+        <mat-card-header>
+            <mat-card-title>Create e new report</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]="report.name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Select Form</mat-label>
+                <mat-select [(ngModel)]="report.formId">
+                    <mat-option value="">Select Form</mat-option>
+                    <mat-option *ngFor="let form of forms" value="{{form.id}}">{{form.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Owner</mat-label>
+                <input matInput placeholder="Ex. pat@example.com" [(ngModel)]="report.owner" name="owner">
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions class="text-end">
+            <button mat-button class="bg-white text-black" (click)="cancel()">Cancel</button>
+            <button mat-button class="bg-primary text-white" (click)="saveReport()">Create</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-5">
+            <mat-card class="mb-3 card" *ngFor="let submission of submissions">
+                <mat-card-header class="card-header-span">
+                    <mat-card-title class="card-title">
+                        <h5>{{ submission.task }}</h5>
+                    </mat-card-title>
+                    <span *ngIf="submission.status === 1" class="status status-gray">
+                        <img src="assets/icons/EllipseGray.svg">
+                        {{submission.statusName}}
+                    </span>
+                    <span *ngIf="submission.status === 2" class="status status-red">
+                        <img src="assets/icons/EllipseRed.svg">
+                        {{submission.statusName}}
+                    </span>
+                    <span *ngIf="submission.status === 3" class="status status-green">
+                        <img src="assets/icons/EllipseGreen.svg">
+                        {{submission.statusName}}
+                    </span>
+                </mat-card-header>
+                <mat-card-content class="card-content">
+                    <span class="card-text">
+                        <label appGray>From: </label> {{submission.from }}
+                    </span>
+                    <span class="card-text">
+                        <label appGray>To: </label> {{submission.to }}
+                    </span>
+                    <span class="card-text">
+                        <label appGray>Due Date: <label appRed>{{submission.dueDateFormated || '' }}</label></label>
+                    </span>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-lg-7">
+            
+        </div>
+    </div>
+</div>

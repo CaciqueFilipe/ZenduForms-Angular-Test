@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header li {
+    margin-right: 20px;
+}
+
+.header a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.square_icon {
+    border: 1px solid #fff;
+}
+
+.header .logo {
+    max-height: 32px;
+}
+
+@media screen and (min-width: 992px) {
+    .header .title-group {
+        padding-left: 100px;
+    }
+}
+
+.header i {
+    margin-right: 5px;
+}
+
+.header .active {
+    background-color: #0073B8;
+}
+.selected {
+    font-weight: bold;
+}

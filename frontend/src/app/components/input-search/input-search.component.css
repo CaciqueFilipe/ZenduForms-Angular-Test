@@ -1,0 +1,9 @@
+
+.input-search{
+    height: 63px !important;
+    width: 100%;
+}
+
+.input-search .input-search-label {
+    padding-left: 20px;
+}

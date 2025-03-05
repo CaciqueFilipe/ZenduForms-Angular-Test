@@ -1,0 +1,46 @@
+<mat-card class="mb-3" *ngFor="let element of reports">
+    <div class="row itens-card">
+        <div class="col-lg3 col-md-3 col-sm-12 col-xs-12">
+            <span matTextPrefix class="span-icon">
+                <img src="assets/icons/Graph.svg">
+            </span>
+            <strong>{{element.name}}</strong>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-12 text-start" appGray>Created:</div>
+                <div class="col-12 text-start">{{element.createdFormated || ''}}</div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-12" appGray>Modified:</div>
+                <div class="col-12">{{element.modifiedFormated || ''}}</div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-12" appGray>Owner:</div>
+                <div class="col-12">{{element.owner}}</div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-12" appGray>Form:</div>
+                <div class="col-12" appBlue>{{element.formName || ''}}</div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+            <img class="span-icon-actions" src="assets/icons/Delete.svg" (click)="deleteReport(element.id)">
+            <a routerLink="/reports/update/{{ element.id }}">
+                <img class="span-icon-actions" src="assets/icons/Edit.svg">
+            </a>
+        </div>
+    </div>
+    <!-- <mat-paginator #paginator
+      [length]="dataSource?.data?.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]">
+  </mat-paginator> -->
+</mat-card>

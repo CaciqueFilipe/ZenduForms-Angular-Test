@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.red {
+    color: #e35e6b;
+}
+
+.v-middle {
+    vertical-align: middle;
+}
+
+.msg-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.msg-error {
+    background-color: #e35e6b;
+    color: #fff;
+}
+
+.content {
+    padding: 16px;
+    background-color: #fff;
+}
+
+.primary {
+    background-color: #2188D9;
+    color: #fff;
+}
+
+.itens-card {
+    display: flex;
+    align-items: center;
+}
+
+.span-icon-actions {
+    width: 21px;
+    padding-right: 5px;
+}
+
+.input-width {
+    width: 100%;
+}
+
+.my-pagination .ngx-pagination li {
+    border: 1px solid #B8B9BC;
+    border-radius: 4px;
+    margin-left: 5px
+}
+
+.my-pagination .ngx-pagination .disabled {
+    background-color: #ECECED;
+}
+
+.my-pagination .ngx-pagination .current {
+    border: 1px solid #2188D9;
+    color: #2188D9;
+    background-color: #fff;
+}
+
+.filters {
+    display: flex;
+    align-items: top;
+}
+
+.status {
+    border-radius: 4px;
+    padding: 4px 16px;
+}
+
+.status-green {
+    border: 1px solid #53D86A;
+    color: #53D86A;
+    background-color: #D7E5DA;
+}
+
+.status-gray {
+    border: 1px solid #B8B9BC;
+    color: #B8B9BC;
+    background-color: #ECECED;
+}
+
+.status-red {
+    border: 1px solid #FF3D00;
+    color: #FF3D00;
+    background-color: #FF3D001A;
+}

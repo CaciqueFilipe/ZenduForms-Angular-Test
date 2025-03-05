@@ -1,0 +1,50 @@
+<mat-card class="mb-5">
+    <mat-card-title *ngIf="customer.id">Update Customer</mat-card-title>
+    <mat-card-title *ngIf="!customer.id">New Customer</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input
+                matInput
+                placeholder="Company Name"
+                [(ngModel)]="customer.companyName"
+                name="companyName"
+            >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Customer Address</mat-label>
+            <input
+                matInput
+                placeholder="Ex. 2118 Thornridge Cir. Syracuse, Connecticut 35624"
+                [(ngModel)]="customer.customerAddress"
+                name="customerAddress"
+            >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Contact</mat-label>
+            <input
+                matInput
+                placeholder="Ex. pat@example.com"
+                [(ngModel)]="customer.contact"
+                name="contact"
+            >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Phone Number</mat-label>
+            <input
+                matInput
+                placeholder="Ex. +3-8(063)-625-62-79"
+                [(ngModel)]="customer.phoneNumber"
+                name="phoneNumber"
+            >
+        </mat-form-field>
+    </form>
+    <button class="primary" mat-raised-button (click)="saveCustomer()">
+        Save
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancel
+    </button>
+    <button *ngIf="customer.id" mat-raised-button class="bg-danger text-white" (click)="delete(customer.id)">
+        Delete
+    </button>
+</mat-card>

@@ -1,0 +1,14 @@
+.full-width-table {
+    width: 100%;
+}
+
+.example-margin {
+    margin: 0 10px;
+}
+
+.deletedButton {
+    color: #FF3D00;
+    font-weight: 500;
+    padding-left: 10px;
+    background-color: #fff !important;
+}

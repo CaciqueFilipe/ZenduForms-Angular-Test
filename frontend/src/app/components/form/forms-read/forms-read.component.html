@@ -1,0 +1,42 @@
+<mat-card class="mb-3" *ngFor="let element of forms">
+    <div class="row itens-card">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <span matTextPrefix class="span-icon">
+                <img src="assets/icons/Document.svg">
+            </span>
+            <strong>{{element.name}}</strong>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-12 text-start" appGray>Created:</div>
+                <div class="col-12 text-start">{{element.createdFormated || ''}}</div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-12" appGray>Modified:</div>
+                <div class="col-12">{{element.modifiedFormated || ''}}</div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-12" appGray>Owner:</div>
+                <div class="col-12">{{element.owner}}</div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-12" appGray>Submissions:</div>
+                <div class="col-12 text-end" appBlue>{{element.submissions}}</div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+            <img class="span-icon-actions" src="assets/icons/Send.svg" (click)="executeAction('send')">
+            <img class="span-icon-actions" src="assets/icons/Graph.svg" (click)="executeAction('graph')">
+            <img class="span-icon-actions" src="assets/icons/Activity.svg" (click)="executeAction('activity')">
+            <a routerLink="/forms/update/{{ element.id }}">
+                <img class="span-icon-actions" src="assets/icons/Edit.svg">
+            </a>
+        </div>
+    </div>
+</mat-card>

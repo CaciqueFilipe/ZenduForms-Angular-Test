@@ -1,0 +1,10 @@
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actions .span-icon {
+    width: 30px;
+    padding-right: 6px;
+}
