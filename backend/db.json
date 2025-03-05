@@ -2150,5 +2150,117 @@
       "created": "Dec 28, 2020",
       "modified": "Dec 30, 2020"
     }
+  ],
+  "historyRecords": [
+    {
+      "id": 1,
+      "check":false,
+      "tripDates":"02-12-2020",
+      "startTime":"10:33 PM",
+      "vehicleId":"b131",
+      "odometerStart":"185 miles",
+      "odometerEnd":"195 miles",
+      "submissionsEmailId":"michaelsnow@zenduit.com",
+      "submissionsTime":"12-14-2020 9:02 PM"
+    },
+    {
+      "id": 2,
+      "check":false,
+      "tripDates":"12-20-2019",
+      "startTime":"1:33 PM",
+      "vehicleId":"f6282",
+      "odometerStart":"81.34 miles",
+      "odometerEnd":"121.04 miles",
+      "submissionsEmailId":"michaelsnow@zenduit.com",
+      "submissionsTime":"12-14-2020 9:02 PM"
+    },
+    {
+      "id": 3,
+      "check":false,
+      "tripDates":"02-12-2020",
+      "startTime":"9:33 AM",
+      "vehicleId":"as7893",
+      "odometerStart":"623.99 miles",
+      "odometerEnd":"689.09 miles",
+      "submissionsEmailId":"michaelsnow@zenduit.com",
+      "submissionsTime":"12-14-2020 9:02 PM"
+    },
+    {
+      "id": 4,
+      "check":false,
+      "tripDates":"12-20-2019",
+      "startTime":"1:33 PM",
+      "vehicleId":"d782",
+      "odometerStart":"81.34 miles",
+      "odometerEnd":"121.04 miles",
+      "submissionsEmailId":"michaelsnow@zenduit.com",
+      "submissionsTime":"12-14-2020 9:02 PM"
+    },
+    {
+      "id": 5,
+      "check":false,
+      "tripDates":"02-12-2020",
+      "startTime":"9:33 AM",
+      "vehicleId":"as7893",
+      "odometerStart":"623.99 miles",
+      "odometerEnd":"689.09 miles",
+      "submissionsEmailId":"michaelsnow@zenduit.com",
+      "submissionsTime":"12-14-2020 9:02 PM"
+    },
+    {
+      "id": 6,
+      "check":false,
+      "tripDates":"12-20-2019",
+      "startTime":"1:33 PM",
+      "vehicleId":"12da",
+      "odometerStart":"81.34 miles",
+      "odometerEnd":"121.04 miles",
+      "submissionsEmailId":"michaelsnow@zenduit.com",
+      "submissionsTime":"12-14-2020 9:02 PM"
+    },
+    {
+      "id": 7,
+      "check":false,
+      "tripDates":"02-12-2020",
+      "startTime":"9:33 AM",
+      "vehicleId":"45kfds4",
+      "odometerStart":"623.99 miles",
+      "odometerEnd":"689.09 miles",
+      "submissionsEmailId":"michaelsnow@zenduit.com",
+      "submissionsTime":"12-14-2020 9:02 PM"
+    },
+    {
+      "id": 8,
+      "check":false,
+      "tripDates":"12-20-2019",
+      "startTime":"1:33 PM",
+      "vehicleId":"b1567",
+      "odometerStart":"81.34 miles",
+      "odometerEnd":"121.04 miles",
+      "submissionsEmailId":"michaelsnow@zenduit.com",
+      "submissionsTime":"12-14-2020 9:02 PM"
+    },
+    {
+      "id": 9,
+      "check":false,
+      "tripDates":"02-12-2020",
+      "startTime":"9:33 AM",
+      "vehicleId":"123kdasd",
+      "odometerStart":"623.99 miles",
+      "odometerEnd":"689.09 miles",
+      "submissionsEmailId":"michaelsnow@zenduit.com",
+      "submissionsTime":"12-14-2020 9:02 PM"
+    },
+    {
+      "id": 10,
+      "check":false,
+      "tripDates":"12-20-2019",
+      "startTime":"1:33 PM",
+      "vehicleId":"dgh67d4",
+      "odometerStart":"81.34 miles",
+      "odometerEnd":"121.04 miles",
+      "submissionsEmailId":"michaelsnow@zenduit.com",
+      "submissionsTime":"12-14-2020 9:02 PM"
+    }
   ]
 }

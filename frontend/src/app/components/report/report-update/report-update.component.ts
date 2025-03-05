@@ -6,6 +6,18 @@ import { ReportService } from '../report.service';
 import { Form } from '../../form/form.model';
 import { Report } from '../report.model';
 import * as moment from 'moment';
+import { HistoryRecord } from '../../history-record/history-record.model';
+
+const alerts = [
+  {
+    tipo: 'print',
+    message: 'Print successfully!'
+  },
+  {
+    tipo: 'export',
+    message: 'Export successfully!'
+  },
+]
 
 @Component({
   selector: 'app-report-update',
@@ -24,7 +36,47 @@ export class ReportUpdateComponent implements OnInit {
   }
   measurement = ''
   dateFormated = ''
-  timezone = ''
+  timezone = '';
+  viewExport = false;
+  filter: string = '';
+  filterBy: string = '';
+  dataSelected: HistoryRecord[] = [];
+
+  selectOptions = [
+    {
+      label: "Trip Date (Question 4)",
+      value: "tripDates",
+    },
+    {
+      label: "Start Time(Question 3)",
+      value: "startTime",
+    },
+    {
+      label: "Vehicle ID(Question 2)",
+      value: "vehicleId",
+    },
+    {
+      label: "Odometer Start",
+      value: "odometerStart",
+    },
+    {
+      label: "Odometer End",
+      value: "odometerEnd",
+    },
+    {
+      label: "Submissions Email ID",
+      value: "submissionsEmailId",
+    },
+    {
+      label: "Submissions Time",
+      value: "submissionsTime",
+    },
+  ];
+
+  checkedAll = false;
+  page = 1;
+  itemsPerPage = 10;
+  pageLenght = (this.page * this.itemsPerPage) || 10;
 
   constructor(
     private reportService: ReportService,
@@ -59,7 +111,28 @@ export class ReportUpdateComponent implements OnInit {
     }
   }
 
+  saveReport() {
+    this.router.navigate(['/reports'])
+  }
+
   cancel(): void {
     this.router.navigate(['/reports'])
+  }
+
+  inputChange(string: any) {
+    this.filter = string;
+  }
+
+  dataSelectedChange(dataSelected: HistoryRecord[] | []) {
+    if (dataSelected.length > 0) {
+      this.viewExport = true;
+      return;
+    }
+    this.viewExport = false;
+  }
+
+  executeAction(tipo: string) {
+    const message = alerts.find(a => a.tipo === tipo)?.message || 'Action executed successfully!';
+    this.reportService.showMessage(message);
   }
 }

@@ -59,6 +59,7 @@ import { CustomerCreateComponent } from './components/customer/customer-create/c
 import { SubmissionReadComponent } from './components/submission/submission-read/submission-read.component';
 import { SubmissionMapComponent } from './components/submission/submission-map/submission-map.component';
 import { ReportUpdateComponent } from './components/report/report-update/report-update.component';
+import { HistoryRecordReadComponent } from './components/history-record/history-record-read/history-record-read.component';
 
 const MY_DATE_FORMATS = {
   parse: {
@@ -114,7 +115,8 @@ registerLocaleData(localePt);
     CustomerCreateComponent,
     SubmissionReadComponent,
     SubmissionMapComponent,
-    ReportUpdateComponent
+    ReportUpdateComponent,
+    HistoryRecordReadComponent
   ],
   imports: [
     BrowserModule,
