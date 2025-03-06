@@ -3,6 +3,8 @@ import { SubmissionService } from '../submission.service';
 import { StatusSubmission, Submission } from '../submission.model';
 import * as moment from 'moment';
 
+declare const L: any;
+
 @Component({
   selector: 'app-submission-map',
   templateUrl: './submission-map.component.html',
@@ -21,6 +23,31 @@ export class SubmissionMapComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
+    if (!navigator.geolocation) {
+      console.log("Location not supported")
+    }
+    navigator.geolocation.getCurrentPosition(position => {
+      const coords = position.coords;
+      const latLong = [coords.latitude, coords.longitude];
+      let map = L.map('map').setView([51.505, -0.09], 13);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      let marker = L.marker(latLong).addTo(map);
+
+      marker.bindPopup('<b>Hi</b>').openPopup();
+
+      let popup = L.popup()
+        .setLatLng(latLong)
+        .setContent('<img src="assets/icons/markMap.svg">')
+        .openOn(map);
+    })
+
     this.submissionService.read().subscribe((customArray: Submission[]) => {
       let elements = customArray;
       elements.map(e => {
@@ -60,5 +87,28 @@ export class SubmissionMapComponent implements OnChanges {
       }
       this.submissions = elements;
     })
+  }
+
+  watchPosition() {
+    let desLat = 0;
+    let desLon = 0;
+    let id = navigator.geolocation.watchPosition(
+      (position) => {
+        console.log(
+          `lat: ${position.coords.latitude}, lon: ${position.coords.longitude}`
+        );
+        if (position.coords.latitude === desLat) {
+          navigator.geolocation.clearWatch(id);
+        }
+      },
+      (err) => {
+        console.log(err);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      }
+    );
   }
 }
